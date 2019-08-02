@@ -69,8 +69,6 @@
 <html>
 <head>
 	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
 </head>
 <body>
 	<form action="register.php" method="post" enctype="multipart/form-data">

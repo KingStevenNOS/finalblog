@@ -41,8 +41,6 @@
 <html>
 <head>
 	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
 </head>
 <body>
 	<h1 style="font-family: Tahoma">Login</h1>

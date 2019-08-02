@@ -27,8 +27,6 @@ if(isset($_POST['post'])) {
 <html>
   <head>
     <title>Post</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
   </head>
   <body>
       <form action="posts.php" method="POST" enctype="multipart/form-data">

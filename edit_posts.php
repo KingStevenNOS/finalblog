@@ -14,7 +14,8 @@ if(isset($_POST['update'])) {
     $content = strip_tags($_POST['content']);
     $title = mysqli_real_escape_string($db,$title);
     $content = mysqli_real_escape_string($db,$content);
-    $sql = "UPDATE posts  SET title ='$title', content='$content' WHERE id='$pid'";
+    $date = date('l jS \of F Y h:i:s A');
+    $sql = "UPDATE posts SET title ='$title', content='$content', date='$date' ";
     if(title == "" || $content=="") {
       echo "Please Complete your Post!";
       return;
@@ -26,9 +27,7 @@ if(isset($_POST['update'])) {
 <!DOCTYPE html>
 <html>
   <head>
-    <title><?php $title ?></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+    <title>title</title>
   </head>
   <body>
     <?php

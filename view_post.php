@@ -38,7 +38,8 @@
         echo $posts;
     }
     else {
-        echo "There are no Blog Posts to display! <br/> <a href='index.php'>Return</a>";
+        
+        echo "<br/><br/><br/><p>There are no Blog Posts to display!</p> <br/> <a href='index.php'>Return</a>";
     }
     ?>
 

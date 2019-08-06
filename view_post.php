@@ -14,7 +14,7 @@
     <?php
     require_once("nbbc/nbbc.php");
     $bbcode=new BBCode;
-    $pid=$_GET['pid'];
+    $pid=strip_tags($_GET['pid']);
     $sql="SELECT * FROM posts WHERE id = $pid";
     $res = mysqli_query($db,$sql) or die(mysqli_error($db));
     $posts = "";
@@ -33,7 +33,7 @@
             }
             $output = $bbcode->Parse($content);
             
-            $posts.= "<div><h2>$title</h2><h4>$date</h4><p>$output</p><p>$admin</p> <a href='index.php'>Return</a></div>";
+            $posts.= "<div><h2>$title</h2><h4>$date</h4><p>$output</p><p>$admin</p><a href='index.php'>Return</a> | <a href ='comments.php?pid=$pid'>Post Comment</a></div>";
         }
         echo $posts;
     }
@@ -41,8 +41,30 @@
         
         echo "<br/><br/><br/><p>There are no Blog Posts to display!</p> <br/> <a href='index.php'>Return</a>";
     }
+
+    echo "<header><u>Comments Section</u></header>";
+    
+
+    $sql_getcomments = "SELECT * FROM comments WHERE postId = $pid";
+    $results = mysqli_query($db, $sql_getcomments);
+    $comments = "";
+    if (mysqli_num_rows($results) > 0) {
+        while ($hex = mysqli_fetch_assoc($results)) {
+            $user = $hex['username'];
+            $comm = $hex['comment'];
+            $new_date = $hex['date'];
+            $comments.= "<hr/><br/><div><h4><b>$user<b></h4><h4>$new_date</h4><p>$comm</p></div><hr/><br/>";
+
+        }
+        echo $comments;
+    }
+    else{
+        echo "There are no comments on this post";
+    }
     ?>
 
 </body>
+    
 
+</footer>
 </html>

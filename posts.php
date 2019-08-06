@@ -11,7 +11,7 @@ if(isset($_POST['post'])) {
 
     $date = date('l jS \of F Y h:i:s A');
 
-    $sql = "INSERT into posts (title, content, date) VALUES ('$title','$content','$date')";
+    $sql = "INSERT INTO posts (title, content, date) VALUES ('$title','$content','$date')";
 
     if($title == "" || $content=="") {
       echo "Please Complete your Post!";
